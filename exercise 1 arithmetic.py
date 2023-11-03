@@ -25,8 +25,8 @@ def arithmetic_arranger(problems, optional_solution=False):
         if i > 4:
             formatted_output = "Error: Too many problems."
             return formatted_output
-        problems[i] = problems[i].replace(" ","")
-        problems_split.append(problems[i].replace("+","op").replace("-", "op").split("op"))
+        problems[i] = problems[i].replace(" ", "")
+        problems_split.append(problems[i].replace("+", "op").replace("-", "op").split("op"))
         
         if len(problems_split[i]) == 1:
             formatted_output = "Error: Operator must be '+' or '-'."
@@ -75,10 +75,10 @@ def arithmetic_arranger(problems, optional_solution=False):
         numS_length = len(str(solution))
         num_of_max_num_digits.append(max(num1_length, num2_length)) # determine the max digits in the task
         
-        added_spaces_first_row.append((max(num2_length, num1_length)-num1_length)*space)
-        added_spaces_second_row.append((max(num1_length, num2_length)-num2_length)*space)
-        added_spaces_solution_row.append((max(num1_length, num2_length)-numS_length)*space)
-        seperators_list.append(((num_of_max_num_digits[-1]+2)*separator))
+        added_spaces_first_row.append((max(num2_length, num1_length) - num1_length) * space)
+        added_spaces_second_row.append((max(num1_length, num2_length) - num2_length) * space)
+        added_spaces_solution_row.append((max(num1_length, num2_length) - numS_length) * space)
+        seperators_list.append(((num_of_max_num_digits[-1] + 2) * separator))
 
     # Add the first line to the formatted output
     for i in range(len(problems_split)):
@@ -119,5 +119,5 @@ def arithmetic_arranger(problems, optional_solution=False):
              #   formatted_output += "\n"
     return formatted_output
 
-print(arithmetic_arranger(["32 + 698", "3801 - 2", "41 - 43", "99 - 99", "342 - 341"],True))
+print(arithmetic_arranger(["32 + 698", "3801 - 2", "41 - 43", "99 - 99", "342 - 341"], True))
 
